@@ -1,0 +1,118 @@
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cores Oficiais da Marca Taiada */
+  --taiada-dark: #15301d;
+  --taiada-primary: #347947;
+  --taiada-light-bg: #f4f7f5;
+  --taiada-dark-bg: #0b1910;
+
+  /* Curvas de Easing Emil Kowalski / Apple */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Superfícies */
+  --surface-bg: #f4f7f5;
+  --surface-card: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  --text-primary: #0f2416;
+  --text-secondary: #3f5947;
+  --border-subtle: rgba(21, 48, 29, 0.10);
+}
+
+[data-theme="dark"] {
+  --surface-bg: #0b1910;
+  --surface-card: #15301d;
+  --surface-glass: rgba(21, 48, 29, 0.85);
+  --text-primary: #f4f7f5;
+  --text-secondary: #a7c7b0;
+  --border-subtle: rgba(52, 121, 71, 0.35);
+}
+
+[data-theme="high-contrast"] {
+  --surface-bg: #ffffff;
+  --surface-card: #ffffff;
+  --surface-glass: #ffffff;
+  --text-primary: #15301d;
+  --text-secondary: #15301d;
+  --border-subtle: #15301d;
+}
+
+/* Regras Mobile-Native */
+html {
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* Impede auto-zoom do iOS em inputs */
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* Utilitário para ocultar barras de rolagem */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Classes para Pinos Customizados Leaflet (remove fundo padrão do divIcon) */
+.leaflet-div-icon.taiada-custom-leaflet-pin,
+.leaflet-div-icon.taiada-draggable-custom-pin,
+.leaflet-div-icon.taiada-user-location-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Animações de Pulso dos Pinos de Status */
+@keyframes pulse-amber {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.4;
+  }
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.22);
+    opacity: 0.3;
+  }
+}
+
+.taiada-pulse-amber {
+  animation: pulse-amber 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.taiada-pulse-red {
+  animation: pulse-red 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Estilos de Impressão para Gerador de Ofício A4 */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

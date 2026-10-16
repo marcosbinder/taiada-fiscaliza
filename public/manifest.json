@@ -1,0 +1,17 @@
+{
+  "name": "Taiada Fiscaliza - Cobra, Taiada!",
+  "short_name": "Taiada Fiscaliza",
+  "description": "Plataforma Cívica Colaborativa Mobile-First para Zeladoria Urbana de Caçapava - SP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#15301d",
+  "theme_color": "#15301d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

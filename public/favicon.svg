@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="taiadaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15301d"/>
+      <stop offset="100%" stop-color="#347947"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#taiadaGrad)"/>
+  <path d="M256 96 C182 96 122 156 122 230 C122 328 256 416 256 416 C256 416 390 328 390 230 C390 156 330 96 256 96 Z" fill="#ffffff" fill-opacity="0.95"/>
+  <circle cx="256" cy="222" r="54" fill="#15301d"/>
+</svg>
